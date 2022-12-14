@@ -588,7 +588,7 @@ class ChargePoint(cp):
                     om.charging_profile_kind.value: ChargingProfileKindType.absolute.value,
                     om.charging_profile_purpose.value: ChargingProfilePurposeType.charge_point_max_profile.value,
                     om.charging_schedule.value: {
-                        om.charging_rate_unit.value: units,
+                        om.charging_rate_unit.value: units, #dummy comment to bump version
                         om.charging_schedule_period.value: [
                             {om.start_period.value: 0, om.limit.value: lim}
                         ],
