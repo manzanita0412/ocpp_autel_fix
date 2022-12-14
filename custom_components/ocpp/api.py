@@ -584,7 +584,7 @@ class ChargePoint(cp):
                 connector_id=0,
                 cs_charging_profiles={
                     om.charging_profile_id.value: 8,
-                    om.stack_level.value: stack_level,
+                    om.stack_level.value: 5,
                     om.charging_profile_kind.value: ChargingProfileKindType.absolute.value,
                     #om.recurrency_kind.value: RecurrencyKind.daily.value,
                     om.charging_profile_purpose.value: ChargingProfilePurposeType.charge_point_max_profile.value,
@@ -615,7 +615,7 @@ class ChargePoint(cp):
                 connector_id=0,
                 cs_charging_profiles={
                     om.charging_profile_id.value: 8,
-                    om.stack_level.value: stack_level - 1,
+                    om.stack_level.value: 5,
                     om.charging_profile_kind.value: ChargingProfileKindType.relative.value,
                     #om.recurrency_kind.value: RecurrencyKind.daily.value,
                     om.charging_profile_purpose.value: ChargingProfilePurposeType.tx_default_profile.value,
