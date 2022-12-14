@@ -95,7 +95,7 @@ class OcppMisc(str, Enum):
     charging_profile_id = "chargingProfileId"
     stack_level = "stackLevel"
     charging_profile_kind = "chargingProfileKind"
-    recurrency_kind = "RecurrencyKind",
+    recurrency_kind = "recurrencyKind",
     charging_profile_purpose = "chargingProfilePurpose"
     charging_schedule = "chargingSchedule"
     charging_rate_unit = "chargingRateUnit"
