@@ -565,9 +565,6 @@ class ChargePoint(cp):
             resp = await self.get_configuration(
                 ckey.charging_schedule_allowed_charging_rate_unit.value
             )
-            resp = await self.get_configuration(
-                ckey.supported_file_transfer_protocols.value
-            )
             _LOGGER.info(
                 "Charger supports setting the following units: %s",
                 resp,

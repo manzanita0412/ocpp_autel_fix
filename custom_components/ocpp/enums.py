@@ -153,7 +153,6 @@ class ConfigurationKey(str, Enum):
     transaction_message_retry_interval = "TransactionMessageRetryInterval"
     unlock_connector_on_ev_side_disconnect = "UnlockConnectorOnEVSideDisconnect"
     web_socket_ping_interval = "WebSocketPingInterval"
-    supported_file_transfer_protocols = "SupportedFileTransferProtocols"
 
     # 9.2 Local Auth List Management Profile
     local_auth_list_enabled = "LocalAuthListEnabled"
