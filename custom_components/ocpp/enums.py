@@ -107,6 +107,7 @@ class OcppMisc(str, Enum):
     feature_profile_remote = "RemoteTrigger"
     feature_profile_auth = "LocalAuthListManagement"
     tech_info = "techInfo"
+    start_schedule = "2013-01-01T00:00Z"
 
     # for use with Smart Charging
     current = "Current"
