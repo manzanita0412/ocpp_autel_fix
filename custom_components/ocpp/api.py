@@ -590,7 +590,7 @@ class ChargePoint(cp):
                     om.charging_profile_purpose.value: ChargingProfilePurposeType.charge_point_max_profile.value,
                     om.charging_schedule.value: {
                         om.charging_rate_unit.value: units,
-                        om.start_schedule.value: "2013-01-01T00:00Z",
+                        om.start_schedule.value: "2022-12-15T00:00Z",
                         om.charging_schedule_period.value: [
                             {om.start_period.value: 0, om.limit.value: lim}
                         ],
@@ -621,7 +621,7 @@ class ChargePoint(cp):
                     om.charging_profile_purpose.value: ChargingProfilePurposeType.tx_default_profile.value,
                     om.charging_schedule.value: {
                         om.charging_rate_unit.value: units,
-                        #om.start_schedule.value: "2013-01-01T00:00Z",
+                        #om.start_schedule.value: "2022-12-15T00:00Z",
                         om.charging_schedule_period.value: [
                             {om.start_period.value: 0, om.limit.value: lim}
                         ],
