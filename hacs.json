@@ -1,5 +1,5 @@
 {
-  "name": "Open Charge Point Protocol (OCPP) v0.56",
+  "name": "Open Charge Point Protocol (OCPP) v0.57",
   "content_in_root": false,
   "homeassistant": "2022.7.0",
   "render_readme": true,

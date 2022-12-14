@@ -40,6 +40,7 @@ from ocpp.v16.enums import (
     Measurand,
     MessageTrigger,
     Phase,
+    RecurrencyKindType,
     RegistrationStatus,
     RemoteStartStopStatus,
     ResetStatus,
@@ -585,6 +586,7 @@ class ChargePoint(cp):
                     om.charging_profile_id.value: 8,
                     om.stack_level.value: stack_level,
                     om.charging_profile_kind.value: ChargingProfileKindType.recurring.value,
+                    om.recurrency_kind.value: RecurrencyKindType.daily.value,
                     om.charging_profile_purpose.value: ChargingProfilePurposeType.charge_point_max_profile.value,
                     om.charging_schedule.value: {
                         om.charging_rate_unit.value: units,
@@ -613,6 +615,7 @@ class ChargePoint(cp):
                     om.charging_profile_id.value: 8,
                     om.stack_level.value: stack_level - 1,
                     om.charging_profile_kind.value: ChargingProfileKindType.recurring.value,
+                    om.recurrency_kind.value: RecurrencyKindType.daily.value,
                     om.charging_profile_purpose.value: ChargingProfilePurposeType.tx_default_profile.value,
                     om.charging_schedule.value: {
                         om.charging_rate_unit.value: units,
