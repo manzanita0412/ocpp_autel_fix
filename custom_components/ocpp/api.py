@@ -581,16 +581,16 @@ class ChargePoint(cp):
             )
             stack_level = int(resp)
             req = call.SetChargingProfilePayload(
-                connector_id=0,
+                connector_id=1, #old was 0
                 cs_charging_profiles={
                     om.charging_profile_id.value: 8,
-                    om.stack_level.value: 5,
+                    om.stack_level.value: stack_level,
                     om.charging_profile_kind.value: ChargingProfileKindType.absolute.value,
                     #om.recurrency_kind.value: RecurrencyKind.daily.value,
                     om.charging_profile_purpose.value: ChargingProfilePurposeType.charge_point_max_profile.value,
                     om.charging_schedule.value: {
                         om.charging_rate_unit.value: units,
-                        om.start_schedule.value: "2022-12-15T00:00Z",
+                        om.start_schedule.value: "2022-12-14T00:00Z",
                         om.charging_schedule_period.value: [
                             {om.start_period.value: 0, om.limit.value: lim}
                         ],
@@ -612,10 +612,10 @@ class ChargePoint(cp):
             )
             # try a lower stack level for chargers where level < maximum, not <=
             req = call.SetChargingProfilePayload(
-                connector_id=0,
+                connector_id=1,
                 cs_charging_profiles={
                     om.charging_profile_id.value: 8,
-                    om.stack_level.value: 5,
+                    om.stack_level.value: stack_level - 1,
                     om.charging_profile_kind.value: ChargingProfileKindType.relative.value,
                     #om.recurrency_kind.value: RecurrencyKind.daily.value,
                     om.charging_profile_purpose.value: ChargingProfilePurposeType.tx_default_profile.value,
