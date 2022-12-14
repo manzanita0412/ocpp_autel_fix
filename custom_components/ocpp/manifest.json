@@ -1,6 +1,6 @@
 {
   "domain": "ocpp",
-  "name": "Open Charge Point Protocol (OCPP) Autel Fix v0.57",
+  "name": "Open Charge Point Protocol (OCPP) Autel Fix v0.58",
   "documentation": "https://github.com/manzanita0412/ocpp_autel_fix/blob/main/README.md",
   "iot_class": "local_push",
   "issue_tracker": "https://github.com/lbbrhzn/ocpp/issues",
