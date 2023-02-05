@@ -104,7 +104,9 @@ from .enums import (
 )
 
 _LOGGER: logging.Logger = logging.getLogger(__package__)
-logging.getLogger(DOMAIN).setLevel(logging.INFO)
+# logging.getLogger(DOMAIN).setLevel(logging.INFO)
+logging.getLogger("ocpp").setLevel(level=logging.DEBUG)
+logging.getLogger("ocpp").addHandler(logging.StreamHandler())
 # Uncomment these when Debugging
 # logging.getLogger("asyncio").setLevel(logging.DEBUG)
 # logging.getLogger("websockets").setLevel(logging.DEBUG)
@@ -471,7 +473,7 @@ class ChargePoint(cp):
 
             # nice to have, but not needed for integration to function
             # and can cause issues with some chargers
-            #wait self.configure(ckey.web_socket_ping_interval.value, "60")
+            # wait self.configure(ckey.web_socket_ping_interval.value, "60")
             await self.set_availability()
             if prof.REM in self._attr_supported_features:
                 if self.received_boot_notification is False:
@@ -581,12 +583,12 @@ class ChargePoint(cp):
             )
             stack_level = int(resp)
             req = call.SetChargingProfilePayload(
-                connector_id=1, #old was 0
+                connector_id=1,  # old was 0
                 cs_charging_profiles={
                     om.charging_profile_id.value: 8,
                     om.stack_level.value: stack_level,
                     om.charging_profile_kind.value: ChargingProfileKindType.absolute.value,
-                    #om.recurrency_kind.value: RecurrencyKind.daily.value,
+                    # om.recurrency_kind.value: RecurrencyKind.daily.value,
                     om.charging_profile_purpose.value: ChargingProfilePurposeType.charge_point_max_profile.value,
                     om.charging_schedule.value: {
                         om.charging_rate_unit.value: units,
@@ -617,11 +619,11 @@ class ChargePoint(cp):
                     om.charging_profile_id.value: 8,
                     om.stack_level.value: stack_level - 1,
                     om.charging_profile_kind.value: ChargingProfileKindType.relative.value,
-                    #om.recurrency_kind.value: RecurrencyKind.daily.value,
+                    # om.recurrency_kind.value: RecurrencyKind.daily.value,
                     om.charging_profile_purpose.value: ChargingProfilePurposeType.tx_default_profile.value,
                     om.charging_schedule.value: {
                         om.charging_rate_unit.value: units,
-                        #om.start_schedule.value: "2022-12-15T00:00Z",
+                        # om.start_schedule.value: "2022-12-15T00:00Z",
                         om.charging_schedule_period.value: [
                             {om.start_period.value: 0, om.limit.value: lim}
                         ],
